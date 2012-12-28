@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1356674439 source:c:\users\owner\documents\netbeansprojects\matrixpath111\main.cpp
+	<cstdlib>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<string>
+	<vector>
+	<sstream>
+	<map>
+
