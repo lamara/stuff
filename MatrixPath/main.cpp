@@ -2,6 +2,11 @@
  * File:   main.cpp
  * Author: owner
  *
+ * Link to project euler 81: http://projecteuler.net/problem=81
+ * Includes two solutions, a brute force approach (which is stupid never
+ * do this ok) and one that uses dynamic programming (much cooler and
+ * will actually complete before the universe ends)
+ *
  * Created on December 27, 2012, 1:37 AM
  */
 
@@ -50,6 +55,9 @@ void shortestPath(vector<int> &values, vector< vector<int> > const &matrix,
     numcalls++;
     if (stepsLeft == 0)
     {
+	//stores each possible path's weight in the
+        //"value" vector, find the smallest number in
+	//vector to get answer
         prevSum += matrix[row][col];
         values.push_back(prevSum);
         return;
