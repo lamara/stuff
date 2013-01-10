@@ -52,9 +52,7 @@ public class Calculator {
 		}
 		return Float.toString(result);
 		}
-		catch (Exception e) {
-			return "Error";
-		}
+		catch (RuntimeException e) {return "Error";}
 	}
 	
 	
