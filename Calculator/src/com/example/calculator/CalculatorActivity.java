@@ -87,7 +87,7 @@ public class CalculatorActivity extends Activity {
     		case R.id.minus:
     			currentVal = currentVal + "-"; break;
     		case R.id.multiply:
-    			currentVal = currentVal + "x"; break;
+    			currentVal = currentVal + "*"; break;
     		case R.id.divide:
     			currentVal = currentVal + "/"; break;
     		case R.id.clear:
@@ -102,8 +102,8 @@ public class CalculatorActivity extends Activity {
     			char beginChar = currentVal.charAt(0);
     			char endChar = currentVal.charAt(currentVal.length() - 1);
     			//returns "Error" if string starts or ends with an operator
-    			if (beginChar == '+' || beginChar == '-' || beginChar == 'x' || beginChar == '/'
-    				|| endChar == '+' || endChar == '-' || endChar == 'x' || endChar == '/') {
+    			if (beginChar == '+' || beginChar == '-' || beginChar == '*' || beginChar == '/'
+    				|| endChar == '+' || endChar == '-' || endChar == '*' || endChar == '/') {
     				currentVal = "Error";
     				calculated = true;
     				break;

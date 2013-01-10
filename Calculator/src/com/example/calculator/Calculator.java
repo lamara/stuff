@@ -6,7 +6,7 @@ import java.util.List;
 
 
 //provides for the ability to parse through strings that contain
-//only numeric characters as well as +, -, /, x, and . (ex. "323x5+6/2")
+//only numeric characters as well as +, -, /, *, and . (ex. "323x5+6/2")
 //calculating the given string and returning a new string giving the result.
 //strings must begin and end with numbers, i.e. "+432/15" is illegal.
 public class Calculator {
@@ -22,7 +22,9 @@ public class Calculator {
 		String[] terms = getTerms(expression);
 		char[] operators = getOperators(expression);
 		
-		
+		//uses the try block to catch mismatches of operators and terms,
+		//indicating an error in the user input
+		try {
 		//checks whether there are multiplication or division
 		//operators, and if so completes those operations first
 		if (expression.contains("/") || expression.contains("*")) {
@@ -45,15 +47,18 @@ public class Calculator {
 				case '+': result += term; break;
 				case '-': result -= term; break;
 				case '/': result /= term; break;
-				case 'x': result *= term; break;
+				case '*': result *= term; break;
 			}
 		}
-		
 		return Float.toString(result);
+		}
+		catch (Exception e) {
+			return "Error";
+		}
 	}
 	
 	
-	//Iterates over the multiplication or division operators completes the necessary
+	//Iterates over the multiplication or division operators and completes the necessary
 	//operations on terms. Returns an updated terms list with the new calculated values,
 	//and also replaces multiplication and division operators in the operators list
 	//with a ',' character as they are used, denoting a null operation.
@@ -65,7 +70,7 @@ public class Calculator {
 		
 		int index = 0;
 		for (char c : operators) {
-			if (c == 'x' || c == '/') {
+			if (c == '*' || c == '/') {
 				operatorIndexes.add(index);
 			}
 			index++;
@@ -90,7 +95,7 @@ public class Calculator {
 			
 			switch(operators[opIndex]) {
 				case '/': term /= secondTerm; break;
-				case 'x': term *= secondTerm; break;
+				case '*': term *= secondTerm; break;
 			}
 			//using (opIndex - cnt) because we are removing elements
 			//from the arraylist, shortening its range of indexes
@@ -107,7 +112,7 @@ public class Calculator {
 	
 	
 	private static String[] getTerms(String string) {
-		return string.split("[+\\-/x]");
+		return string.split("[+\\-/\\*]");
 	}
 	
 	private static char[] getOperators(String string) {
