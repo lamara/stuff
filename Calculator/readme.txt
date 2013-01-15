@@ -1,5 +1,6 @@
-A simple calculator app made for android. For the most part it is fully functional (there is one bug involving
- the input of multiple dots "." that I haven't had time to fix yet, and I haven't set an upper bound on number of
- inputs which is definitely a problem). The calculator will follow order of operations thanks to the calculator class
-that I built for it. I have tried to break the app in every way possible but I think it is pretty much good except
-for the two issues above.
+A simple calculator app made for android. As of the latest update it is fully functional, and now uses a non-horrid
+way to parse expressions (lets go binary trees you guys rock). It would be interesting to keep on adding more and
+more complex features (exponents, parentheses, maybe even trig functions) to see just how easy or how difficult
+it would be to add on new stuff. If anything becomes too difficult to implement then that would be a good way to see
+what failed with the calculator's overall design and what could possibly be done to improve it if I were to start
+over again.
