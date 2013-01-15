@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-
+
     <Button
         android:id="@+id/num0"
         android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
         android:minHeight="70dip"
         android:minWidth="140dip"
         android:onClick="parseButton"
-        android:text="Button" />
+        android:text="0" />
 
     <Button
         android:id="@+id/num1"

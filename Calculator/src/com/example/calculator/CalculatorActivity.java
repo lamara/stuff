@@ -99,16 +99,7 @@ public class CalculatorActivity extends Activity {
     			if (currentVal.length() == 0) {
     				break;
     			}
-    			char beginChar = currentVal.charAt(0);
-    			char endChar = currentVal.charAt(currentVal.length() - 1);
-    			//returns "Error" if string starts or ends with an operator
-    			if (beginChar == '+' || beginChar == '-' || beginChar == '*' || beginChar == '/'
-    				|| endChar == '+' || endChar == '-' || endChar == '*' || endChar == '/') {
-    				currentVal = "Error";
-    				calculated = true;
-    				break;
-    			}
-    			currentVal = Calculator.calculate(currentVal);
+    			currentVal = PostfixCalculator.calculate(currentVal);
     			calculated = true;
     			break;
     		}
